@@ -1,0 +1,33 @@
+$hero-green: rgb(0, 149, 144);
+
+main {
+  margin: 100px auto;
+  box-sizing: border-box;
+  width: min-content;
+  ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    li {
+      a {
+        border-radius: 10px;
+        border: 1px rgba(0, 0, 0, 0.65) solid;
+        overflow: hidden;
+        display: block;
+        text-decoration: none;
+        color: #222;
+        &:hover,
+        &.active {
+          color: $hero-green;
+          border-color: $hero-green;
+        }
+        .name {
+          padding: 20px 30px;
+        }
+        .image {
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}
