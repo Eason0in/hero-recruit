@@ -8,53 +8,62 @@ function Profile() {
   const { heroId } = useParams()
   const [heroData, setHeroData] = useState(initData)
   const [maxPoint, setMaxPoint] = useState(0)
+  const [isSaving, setIsSaving] = useState(false)
 
   const { remainPoint, hero } = heroData
+
+  const getHeroSumPoint = (data) => Object.values(data).reduce((sum, cur) => (sum += cur), 0)
 
   useEffect(() => {
     fetch(`https://hahow-recruit.herokuapp.com/heroes/${heroId}/profile`)
       .then((res) => res.json())
       .then((data) => {
         setHeroData((last) => ({ ...last, hero: data }))
-        const max = Object.values(data).reduce((sum, cur) => (sum += cur), 0)
-        setMaxPoint(max)
+        setMaxPoint(getHeroSumPoint(data))
       })
       .catch((err) => {
         console.error('err', err)
+        //#region  將資料恢復預設值
         setHeroData(initData)
+        setMaxPoint(0)
+        //#endregion
       })
   }, [heroId])
 
   const handleSave = () => {
-    // fetch(`https://hahow-recruit.herokuapp.com/heroes/${heroId}/profile`, {
-    //   method: 'PATCH',
-    //   body: JSON.stringify({
-    //     title: 'foo',
-    //   }),
-    //   headers: {
-    //     'Content-type': 'application/json; charset=UTF-8',
-    //   },
-    // })
-    //   .then((response) => response.json())
-    //   .then((json) => console.log(json))
+    if (remainPoint > 0 || getHeroSumPoint(hero) !== maxPoint) return alert(`剩餘點數應為 0，或合計不能超過${maxPoint}`)
+
+    setIsSaving(true)
+
+    fetch(`https://hahow-recruit.herokuapp.com/heroes/${heroId}/profile`, {
+      method: 'PATCH',
+      body: JSON.stringify(hero),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    })
+      .then((response) => {
+        if (response.status === 200) {
+          alert('儲存成功')
+          console.log('儲存成功')
+        } else {
+          throw new Error('儲存失敗')
+        }
+      })
+      .catch((err) => console.error(err))
+      .finally(() => setIsSaving(false))
   }
 
   const changeHeroData = (key, count) => {
-    //#region 控制能力值在合理的範圍
-    // 1. 當是加的時候， remainPoint 等於 0 就不做；因為沒有多餘的點數可以用了
-    // 2. 當是減的時候，remainPoint 等於最大值就不做；因為不能超過最大值
-    // 3. 當是減的時候，變更的能力 === 0 不做
-    if (
-      (count === 1 && remainPoint === 0) ||
-      (count === -1 && remainPoint === maxPoint) ||
-      (count === -1 && hero[key] === 0)
-    )
-      return
-    //#endregion
-
-    setHeroData(({ remainPoint, hero }) => {
-      return { remainPoint: remainPoint - count, hero: { ...hero, [key]: hero[key] + count } }
-    })
+    // 控制能力值在合理的範圍
+    // 1. + >> remainPoint >0
+    // 2. - >> hero[key] !== 0
+    if ((count === 1 && remainPoint > 0) || (count === -1 && hero[key] !== 0)) {
+      setHeroData(({ remainPoint, hero }) => ({
+        remainPoint: remainPoint - count,
+        hero: { ...hero, [key]: hero[key] + count },
+      }))
+    }
   }
   return (
     <section>
@@ -78,7 +87,9 @@ function Profile() {
       </article>
       <aside>
         <label>剩餘點數： {remainPoint}</label>
-        <button onClick={handleSave}>儲存</button>
+        <button onClick={handleSave} disabled={isSaving}>
+          儲存
+        </button>
       </aside>
     </section>
   )
