@@ -1,0 +1,61 @@
+section {
+  display: flex;
+  padding: 5vh 2vw;
+  border: 1px #222 solid;
+  column-gap: 5px;
+  article {
+    width: 70%;
+    ul {
+      display: grid;
+      row-gap: 5vh;
+      li {
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-evenly;
+        strong {
+        }
+        .counter {
+          display: inline-flex;
+          column-gap: 2vw;
+          font-size: 1.2rem;
+          align-items: center;
+          button {
+            width: 30px;
+            height: 30px;
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+  aside {
+    width: 30%;
+    align-self: flex-end;
+    display: grid;
+    row-gap: 3vh;
+    button {
+      border-radius: 5px;
+      border: 1px solid #222;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  section {
+    padding: 5vh 6vw;
+    article {
+      width: 60%;
+      ul {
+        width: 50%;
+      }
+    }
+    aside {
+      width: 40%;
+      button {
+        width: 60%;
+        height: 10vh;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
