@@ -6,13 +6,17 @@ body {
     'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 14px;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+.container {
+  width: 280px;
 }
-
 @media (min-width: 768px) {
+  body {
+    font-size: 16px;
+  }
   .container {
     width: 760px;
   }
