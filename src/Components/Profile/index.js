@@ -54,10 +54,14 @@ function Profile() {
       .finally(() => setIsSaving(false))
   }
 
+  /**
+   * 控制能力值在合理的範圍，當以下條件符合才更新能力值
+   * 1. + >> remainPoint > 0
+   * 2. - >> hero[key] !== 0
+   * @param {string} key 變動的能力
+   * @param {number} count +1 / -1
+   */
   const changeHeroData = (key, count) => {
-    // 控制能力值在合理的範圍
-    // 1. + >> remainPoint >0
-    // 2. - >> hero[key] !== 0
     if ((count === 1 && remainPoint > 0) || (count === -1 && hero[key] !== 0)) {
       setHeroData(({ remainPoint, hero }) => ({
         remainPoint: remainPoint - count,
