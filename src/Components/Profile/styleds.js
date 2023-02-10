@@ -1,7 +1,10 @@
-section {
+import styled from 'styled-components'
+import { HERO_DARK } from '../../style/_variables'
+
+const Section = styled.section`
   display: flex;
   padding: 5vh 2vw;
-  border: 1px #222 solid;
+  border: 1px ${HERO_DARK} solid;
   column-gap: 5px;
   article {
     width: 70%;
@@ -38,13 +41,11 @@ section {
     row-gap: 3vh;
     button {
       border-radius: 5px;
-      border: 1px solid #222;
+      border: 1px solid ${HERO_DARK};
     }
   }
-}
 
-@media (min-width: 992px) {
-  section {
+  @media (min-width: 992px) {
     padding: 5vh 6vw;
     article {
       width: 60%;
@@ -60,4 +61,6 @@ section {
       }
     }
   }
-}
+`
+
+export { Section }

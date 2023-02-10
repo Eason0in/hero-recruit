@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import './index.scss'
+import { Section } from './styleds'
 
 const initData = { remainPoint: 0, hero: { str: 0, int: 0, agi: 0, luk: 0 } }
 
@@ -70,7 +70,7 @@ function Profile() {
     }
   }
   return (
-    <section>
+    <Section>
       <article>
         <ul>
           {Object.entries(hero).map(([key, value]) => (
@@ -95,7 +95,7 @@ function Profile() {
           儲存
         </button>
       </aside>
-    </section>
+    </Section>
   )
 }
 
