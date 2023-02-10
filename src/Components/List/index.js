@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
-import './index.scss'
+import { Container } from './styleds'
 
 function List() {
   const [listData, setListData] = useState([])
@@ -16,7 +16,7 @@ function List() {
 
   //#endregion
   return (
-    <main className="container">
+    <Container>
       <nav>
         <ul>
           {listData.map(({ id, image, name }) => (
@@ -34,7 +34,7 @@ function List() {
         </ul>
       </nav>
       <Outlet />
-    </main>
+    </Container>
   )
 }
 

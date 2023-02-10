@@ -1,6 +1,8 @@
-$hero-green: rgb(0, 149, 144);
+import styled from 'styled-components'
+import { container } from '../../style/_mixin'
+import { HERO_GREEN } from '../../style/_variables'
 
-main {
+const Container = styled(container)`
   margin: 70px auto;
   box-sizing: border-box;
   nav {
@@ -20,8 +22,8 @@ main {
           color: #222;
           &:hover,
           &.active {
-            color: $hero-green;
-            border-color: $hero-green;
+            color: ${HERO_GREEN};
+            border-color: ${HERO_GREEN};
           }
           .name {
             padding: 20px 30px;
@@ -33,4 +35,6 @@ main {
       }
     }
   }
-}
+`
+
+export { Container }
