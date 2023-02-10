@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import List from './Components/List'
 import Profile from './Components/Profile'
-import './index.scss'
+import './index.css'
 import loader from './Loaders/index'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
