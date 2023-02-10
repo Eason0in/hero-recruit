@@ -49,6 +49,18 @@
 
 ## 2.
 
+- 問題：想將 `/` 導到 `/heroes`
+
+- 困難：express server 可以用 redirect 做導頁，react-router-dom 不知道有沒有方法可以導頁
+
+- 解決的方法：
+
+  - 試想著用 express server 時可以用 redirect 導頁，原本想在 `/` 用 `window.location.replace`
+
+  - 翻[文件](https://reactrouter.com/en/main/fetch/redirect)發現可以寫 redirect 在 loader 裡面
+
+## 3.
+
 - 問題：
 
 - 困難：
