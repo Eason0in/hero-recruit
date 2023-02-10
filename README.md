@@ -11,7 +11,7 @@
 
 - Web 的架構邏輯：
 
-  - 由 src/index.js 為程式入口，使用 route 切換到 url，並載入 List Component (/heroes)，並將 Profile ( /heroes/:heroId ) 設定為 /heroes 的子 route
+  - 由 src/index.js 為程式入口，使用 redirect 從 `/` 切換到 `/heroes`，並載入 List Component，並將 Profile ( /heroes/:heroId ) 設定為 /heroes 的子 route
 
   - List folder 底下有 .js .scss .test.js，當 List 載入後隨即發送 GET API 去要資料；將各英雄的資料當作 route 控制子 route Profile
 
@@ -27,9 +27,7 @@
 
 4. react-scripts：免於設定 webpack babel ，將非 css js 的擴充語言 (ex: .jsx .ts .scss ) 轉成 css，執行時會設定環境變數、確認套件、確認 port，以及建立 development server
 
-5. sass：可以將 css 寫成巢狀，而 Sass 會將語法編譯成原生 css，提供變數、Mixin、for loop、if-else 以及繼承 extend 等其他功能
-
-6.
+5. styled-components：類似 CSSModules 將 style 寫進 className，styled-components 將 html、class 結合成一個 component，可免於傳統開發 class name 以及提高 css 的維護性，每一支 react component 都可以建立屬於自己的 html&css component；支援繼承、使用屬性參數可動態建構 css、類似 Sass 可以寫成巢狀
 
 # 你在程式碼中寫註解的原則，遇到什麼狀況會寫註解
 
@@ -61,8 +59,10 @@
 
 ## 3.
 
-- 問題：
+- 問題：兩個方法打 API
 
-- 困難：
+  - useEffect : 雖然一開始會發兩次 API，但切換卡片不會再重發，但因為到 app 才發，所以一開始會畫面閃一下白色
 
-- 解決的方法：
+  - route loader：雖然一開始用 async await 可以先拿到資料再 render 頁面，但如果切同一張卡， route 會再跑一次 loader 導致一直打 API
+
+- 解決的方法：所以最後使用 useEffect 打 API
