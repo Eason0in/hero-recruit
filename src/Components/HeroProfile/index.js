@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import PointList from './PointList'
 import RemainPointAndBtn from './RemainPointAndBtn'
+import Dog from './Dog'
 import { Section } from './styleds'
 
 const initData = { remainPoint: 0, hero: { str: 0, int: 0, agi: 0, luk: 0 } }
@@ -33,6 +34,7 @@ const Profile = () => {
 
   return (
     <Section>
+      <Dog maxPoint={maxPoint} />
       <PointList heroState={[heroData, setHeroData]} />
       <RemainPointAndBtn getHeroSumPoint={getHeroSumPoint} heroData={heroData} maxPoint={maxPoint} />
     </Section>

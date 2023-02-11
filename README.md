@@ -38,6 +38,8 @@
 
     - RemainPointAndBtn：右邊剩餘點數及儲存按鈕
 
+    - Dog：提示英雄最大能力值
+
   - ErrorPage：當 url 錯誤時切到錯誤頁面
 
 # 你對於所有使用到的第三方 library 的理解，以及他們的功能簡介

@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { HERO_DARK } from '../../styles/_variables'
 
 const Section = styled.section`
+  position: relative;
   display: flex;
   padding: 5vh 2vw;
   border: 1px ${HERO_DARK} solid;
