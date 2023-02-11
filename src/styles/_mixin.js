@@ -1,4 +1,7 @@
 import styled from 'styled-components'
+import { HERO_GREEN } from './_variables'
+
+import { NavLink } from 'react-router-dom'
 
 const container = styled.main`
   width: 280px;
@@ -15,4 +18,16 @@ const container = styled.main`
   }
 `
 
-export { container }
+const routeNavLink = styled(NavLink)`
+  display: block;
+  text-decoration: none;
+  color: #222;
+
+  &:hover,
+  &.active {
+    color: ${HERO_GREEN};
+    border-color: ${HERO_GREEN};
+  }
+`
+
+export { container, routeNavLink }
