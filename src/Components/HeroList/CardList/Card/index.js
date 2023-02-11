@@ -1,17 +1,14 @@
-import { NavLink } from 'react-router-dom'
-import { CardLi } from './styleds'
+import { CardNavLink } from './styleds'
 
 const Card = ({ id, image, name }) => (
-  <CardLi>
-    <NavLink to={`${id}`}>
-      <div className="image">
-        <img src={image} alt={name} />
-      </div>
+  <li>
+    <CardNavLink to={`${id}`}>
+      <img src={image} alt={name} />
       <div className="name">
         <p>{name}</p>
       </div>
-    </NavLink>
-  </CardLi>
+    </CardNavLink>
+  </li>
 )
 
 export default Card

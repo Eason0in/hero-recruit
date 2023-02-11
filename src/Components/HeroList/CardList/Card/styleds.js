@@ -1,29 +1,14 @@
 import styled from 'styled-components'
-import { HERO_GREEN } from '../../../../styles/_variables'
+import { routeNavLink } from '../../../../styles/_mixin'
 
-const CardLi = styled.li`
-  a {
-    border-radius: 10px;
-    border: 1px rgba(0, 0, 0, 0.65) solid;
-    overflow: hidden;
-    display: block;
-    text-decoration: none;
-    color: #222;
+const CardNavLink = styled(routeNavLink)`
+  border-radius: 10px;
+  border: 1px rgba(0, 0, 0, 0.65) solid;
+  overflow: hidden;
 
-    &:hover,
-    &.active {
-      color: ${HERO_GREEN};
-      border-color: ${HERO_GREEN};
-    }
-
-    .name {
-      padding: 20px 30px;
-    }
-
-    .image {
-      overflow: hidden;
-    }
+  .name {
+    padding: 20px 30px;
   }
 `
 
-export { CardLi }
+export { CardNavLink }
