@@ -38,6 +38,8 @@
 
     - RemainPointAndBtn：右邊剩餘點數及儲存按鈕
 
+  - ErrorPage：當 url 錯誤時切到錯誤頁面
+
 # 你對於所有使用到的第三方 library 的理解，以及他們的功能簡介
 
 1. react：由 Meta 開發維護的 JavaScript Framework，專注於資料狀態管理，採用 JSX 語法，會產生一份虛擬 DOM，當資料狀態發生變動時，會比較變動資料虛擬 DOM 的區塊，最後才會更新到 browser 的 DOM；由 Component 為單位，建構頁面上的區塊組件，組件可以有自己的資料狀態 ( useState ) 以及偵測資料變動處理特定功能 ( useEffect ) 等多個 hook 工具
