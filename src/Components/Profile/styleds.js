@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { HERO_DARK } from '../../style/_variables'
+import { HERO_DARK } from '../../styles/_variables'
 
 const Section = styled.section`
   display: flex;
