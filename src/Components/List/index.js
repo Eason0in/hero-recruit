@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
-import { NavLink, Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
+import Card from './Card.js'
 import { Container } from './styleds'
 
 function List() {
@@ -20,16 +21,7 @@ function List() {
       <nav>
         <ul>
           {listData.map(({ id, image, name }) => (
-            <li key={id}>
-              <NavLink to={`${id}`}>
-                <div className="image">
-                  <img src={image} alt={name} />
-                </div>
-                <div className="name">
-                  <p>{name}</p>
-                </div>
-              </NavLink>
-            </li>
+            <Card key={id} id={id} image={image} name={name} />
           ))}
         </ul>
       </nav>
