@@ -5,12 +5,13 @@ import loader from './Loaders/index'
 import HeroList from './Components/HeroList'
 import HeroProfile from './Components/HeroProfile'
 import './index.css'
+import ErrorPage from './Components/ErrorPage'
 
 const router = createBrowserRouter([
   {
     path: '/',
     loader,
-    errorElement: <h1>error</h1>,
+    errorElement: <ErrorPage />,
   },
   {
     path: 'heroes',
