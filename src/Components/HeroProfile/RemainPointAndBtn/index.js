@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Aside } from './styleds'
 
-const RemainPoint = ({ getHeroSumPoint, heroData: { remainPoint, hero }, maxPoint }) => {
+const RemainPointAndBtn = ({ getHeroSumPoint, heroData: { remainPoint, hero }, maxPoint }) => {
   const { heroId } = useParams()
   const [isSaving, setIsSaving] = useState(false)
 
@@ -48,4 +48,4 @@ const RemainPoint = ({ getHeroSumPoint, heroData: { remainPoint, hero }, maxPoin
   )
 }
 
-export default RemainPoint
+export default RemainPointAndBtn
