@@ -1,8 +1,9 @@
 # 如何執行完成的 package
 
-1. 建議 node 版本要在 16.15.0 之後
-2. 建議安裝 yarn 版本要在 1.22.18 之後
-3. 執行 `yarn install` 安裝套件
+1. 下載專案 `git clone https://github.com/Eason0in/hero-recruit.git`
+2. 建議 node 版本要在 16.15.0 之後
+3. 建議安裝 yarn 版本要在 1.22.18 之後
+4. 執行 `yarn install` 安裝套件
 
 # 專案的架構、Web 的架構邏輯
 
