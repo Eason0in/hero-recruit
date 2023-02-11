@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { HERO_GREEN } from '../../../styles/_variables'
+import { HERO_GREEN } from '../../../../styles/_variables'
 
 const CardLi = styled.li`
   a {
