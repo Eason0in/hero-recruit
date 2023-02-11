@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import loader from './Loaders/index'
 import HeroList from './Components/HeroList'
-import Profile from './Components/Profile'
+import HeroProfile from './Components/HeroProfile'
 import './index.css'
 
 const router = createBrowserRouter([
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: ':heroId',
-        element: <Profile />,
+        element: <HeroProfile />,
       },
     ],
   },
