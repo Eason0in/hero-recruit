@@ -1,12 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import loader from './Loaders/index'
 import List from './Components/List'
 import Profile from './Components/Profile'
 import './index.css'
-import loader from './Loaders/index'
-
-const root = ReactDOM.createRoot(document.getElementById('root'))
 
 const router = createBrowserRouter([
   {
@@ -25,6 +23,8 @@ const router = createBrowserRouter([
     ],
   },
 ])
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
 
 root.render(
   <React.StrictMode>
