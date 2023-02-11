@@ -1,5 +1,5 @@
 import { redirect } from 'react-router-dom'
 
-export default function loader() {
-  return redirect('/heroes')
-}
+const loader = () => redirect('/heroes')
+
+export default loader
