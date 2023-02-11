@@ -6,6 +6,7 @@ const Section = styled.section`
   padding: 5vh 2vw;
   border: 1px ${HERO_DARK} solid;
   column-gap: 5px;
+  border-radius: 10px;
 
   @media (min-width: 992px) {
     padding: 5vh 6vw;
