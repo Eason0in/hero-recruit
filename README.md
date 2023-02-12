@@ -4,6 +4,8 @@
 2. 建議 node 版本要在 16.15.0 之後
 3. 建議安裝 yarn 版本要在 1.22.18 之後
 4. 執行 `yarn install` 安裝套件
+5. 建議安裝 npm 版本要在 8.11.0 之後
+6. 執行 `npm install` 安裝套件
 
 # 專案的架構、Web 的架構邏輯
 
@@ -18,6 +20,8 @@
     - Loaders：存放 route 的 loader
 
     - styles：存放 reset.css、styled-components 共用的變數以及組件
+
+  - cypress：存放測試檔案
 
 - Web 的架構邏輯：
 
@@ -53,7 +57,7 @@
 
 3. react-router-dom: 包含 react-router 一切的功能，並另外支援基於 component 的路由，讓開發者可以切換 route 時用 component 切換頁面上的元件
 
-4. react-scripts：免於設定 webpack babel ，將非 css js 的擴充語言 (ex: .jsx .ts .scss ) 轉成 css，執行時會設定環境變數、確認套件、確認 port，以及建立 development server；有四個指令可以用，將專案編譯打包的 build、跑測試使用的 test、將底層設定的 wepback babel 等存放一份在專案裡，可依專案需要修改，一旦修改就不會照著原始設定跑的 eject、啟動專案的 start
+4. react-scripts：免於設定 webpack babel ，將非 css js 的擴充語言 (ex: .jsx .ts .scss ) 轉成 css js，執行時會設定環境變數、確認套件、確認 port，以及建立 development server；有四個指令可以用，將專案編譯打包的 build、跑測試使用的 test、將底層設定的 webpack babel 等存放一份在專案裡，可依專案需要修改，一旦修改就不會照著原始設定跑的 eject、啟動專案的 start
 
 5. styled-components：類似 CSSModules 將 style 寫進 className，styled-components 將 html、class 結合成一個 component，可免於傳統開發 class name 衝名或權重高低造成錯誤樣式以及提高 css 的維護性，每一支 react component 都可以建立屬於自己的 html&css component；支援繼承、使用屬性參數可動態建構 css、類似 Sass 可以寫成巢狀
 
@@ -87,7 +91,7 @@
 
 - 解決的方法：
 
-  - 試想著用 express server 時可以用 redirect 導頁，而前端原本想在 `/` 建立一個 compoent，並在裡面寫程式用 `window.location.replace` 做導頁的功能
+  - 試想著用 express server 時可以用 redirect 導頁，在前端一開始想在 `/` 建立一個 component，並在裡面寫程式用 `window.location.replace` 處理導頁的功能
 
   - 翻[文件](https://reactrouter.com/en/main/fetch/redirect) 發現可以寫 redirect 在 loader 裡面
 
