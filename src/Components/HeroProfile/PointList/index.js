@@ -21,7 +21,7 @@ const PointList = ({ heroState }) => {
     }
   }
   return (
-    <Article>
+    <Article data-test="profile-article">
       <ul>
         {Object.entries(hero).map(([key, value]) => (
           <PointItem key={key} pointK={key} pointV={value} changeHeroData={changeHeroData} />

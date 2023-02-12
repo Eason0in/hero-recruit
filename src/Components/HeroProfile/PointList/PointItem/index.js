@@ -5,11 +5,11 @@ const PointItem = ({ pointK, pointV, changeHeroData }) => {
     <Li>
       <strong>{pointK.toUpperCase()}</strong>
       <div className="counter">
-        <button className="plus" onClick={() => changeHeroData(pointK, 1)}>
+        <button className="plus" onClick={() => changeHeroData(pointK, 1)} data-test="plus">
           +
         </button>
-        <p>{pointV}</p>
-        <button className="sub" onClick={() => changeHeroData(pointK, -1)}>
+        <p data-test="pointV">{pointV}</p>
+        <button className="sub" onClick={() => changeHeroData(pointK, -1)} data-test="sub">
           -
         </button>
       </div>

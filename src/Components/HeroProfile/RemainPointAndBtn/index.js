@@ -39,9 +39,9 @@ const RemainPointAndBtn = ({ getHeroSumPoint, heroData: { remainPoint, hero }, m
   }
 
   return (
-    <Aside>
-      <label>剩餘點數： {remainPoint}</label>
-      <button onClick={handleSave} disabled={isSaving}>
+    <Aside data-test="profile-aside">
+      <label data-test="remainPoint">剩餘點數： {remainPoint}</label>
+      <button onClick={handleSave} disabled={isSaving} data-test="saveBtn">
         儲存
       </button>
     </Aside>
