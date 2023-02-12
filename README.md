@@ -43,6 +43,8 @@
 
   - ErrorPage：當 url 錯誤時切到錯誤頁面
 
+  - cypress：使用 E2E 測試網頁，分為 index、errorPage、heroList、heroProfile 以及 profileList，用 component 為單位分割檔案
+
 # 你對於所有使用到的第三方 library 的理解，以及他們的功能簡介
 
 1. react：由 Meta 開發維護的 JavaScript Framework，專注於資料狀態管理，採用 JSX 語法，會產生一份虛擬 DOM，當資料狀態發生變動時，會比較變動資料虛擬 DOM 的區塊，最後才會更新到 browser 的 DOM；由 Component 為單位，建構頁面上的區塊組件，組件可以有自己的資料狀態 ( useState ) 以及偵測資料變動處理特定功能 ( useEffect ) 等多個 hook 工具
@@ -54,6 +56,8 @@
 4. react-scripts：免於設定 webpack babel ，將非 css js 的擴充語言 (ex: .jsx .ts .scss ) 轉成 css，執行時會設定環境變數、確認套件、確認 port，以及建立 development server；有四個指令可以用，將專案編譯打包的 build、跑測試使用的 test、將底層設定的 wepback babel 等存放一份在專案裡，可依專案需要修改，一旦修改就不會照著原始設定跑的 eject、啟動專案的 start
 
 5. styled-components：類似 CSSModules 將 style 寫進 className，styled-components 將 html、class 結合成一個 component，可免於傳統開發 class name 衝名或權重高低造成錯誤樣式以及提高 css 的維護性，每一支 react component 都可以建立屬於自己的 html&css component；支援繼承、使用屬性參數可動態建構 css、類似 Sass 可以寫成巢狀
+
+6. cypress：端對端測試，測試時會實際執行網頁，也可以看到測試網頁變化的過程，有別於單元測試，更注重使用者實際操作網頁時的測試；跟其他單元測試的套件寫法差不多，有很多 API 可以用 ex: visit、request、should、eq、click
 
 # 你在程式碼中寫註解的原則，遇到什麼狀況會寫註解
 
@@ -69,7 +73,7 @@
 
 ## 1.
 
-- 問題：不會用前端 router 切換頁面，以及 HeroList 在切換頁面時不消失
+- 問題：用前端 router 切換頁面，以及 HeroList 在切換頁面時不消失
 
 - 困難：因之前工作的經驗多半採用 SSR 渲染頁面
 
@@ -96,3 +100,11 @@
   - route loader：雖然一開始用 async await 可以先拿到資料再 render 頁面，但如果切同一張卡， route 會再跑一次 loader 導致每點一次就打 API
 
 - 解決的方法：考量到重複的 request 數量，最後選擇使用 useEffect 打 API
+
+## 4.
+
+- 問題：如何用 cypress 在複雜的專案裡寫 E2E 測試
+
+- 困難：雖然有自己玩過 cypress 和 unit test，但這次作業遠大於之前自己專案的複雜度
+
+- 解決的方法：先學習官網的基本教學，然後慢慢開始套用到這次專案中，遇到特殊狀況就翻文件，ex: 檢測 window alert 是否如預期出現
