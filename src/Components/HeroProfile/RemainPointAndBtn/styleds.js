@@ -11,7 +11,7 @@ const Aside = styled.aside`
     border: 1px solid ${HERO_DARK};
   }
 
-  @media (min-width: 992px) {
+  @media screen and (min-width: 992px) {
     width: 40%;
     button {
       width: 60%;
