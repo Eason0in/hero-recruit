@@ -12,7 +12,6 @@ const getHeroSumPoint = (data) => Object.values(data).reduce((sum, cur) => (sum 
 const Profile = () => {
   const { heroId } = useParams()
   const [heroData, setHeroData] = useState(initData)
-
   const [maxPoint, setMaxPoint] = useState(0)
 
   useEffect(() => {

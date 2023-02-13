@@ -1,7 +1,6 @@
+import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import { HERO_GREEN } from './_variables'
-
-import { NavLink } from 'react-router-dom'
 
 const container = styled.main`
   width: 280px;
