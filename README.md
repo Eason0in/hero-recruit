@@ -70,9 +70,11 @@
 
 6. cypress：端對端測試，測試時會實際執行網頁，也可以看到測試網頁變化的過程，有別於單元測試，更注重使用者實際操作網頁時的測試；跟其他單元測試的套件寫法差不多，有很多 API 可以用 ex: visit、request、should、eq、click
 
+7. cypress-real-events：cypress events 是模擬的，像是 click 以及 type 文字，而 cypress 不支援 hover 等事件，因為會顯示錯誤及導頁，但官方建議可以使用此套件觸發原生事件，但`僅適用`於 `Chromium browsers`，`Firefox 及 Edge 會失效`；支援 realHover()及 realType() 等原生事件
+
 # 你在程式碼中寫註解的原則，遇到什麼狀況會寫註解
 
-1. 我會先想如果今天這段程式碼不是我維護，而是任何 level 的同事來看時，他們怎麼看會比較舒服以及比較快找到目標
+1. 我會先想如果這段程式碼不是我維護，而是任何 level 的同事來看，怎麼樣會比較直接又可以很快的找到目標
 
 2. 當有一個區塊專門做某些事情時，我會使用 #region #endregion 框起來，方便閱讀，ex: useState、useEffect 或 functions
 
