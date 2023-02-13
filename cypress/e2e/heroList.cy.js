@@ -11,7 +11,7 @@ describe('Hero List 檢查', () => {
   it('hover 任一張卡片要會有字體顏色變化及 border 樣式', () => {
     cy.get('@listData').each(({ id }) => {
       cy.getByData(`card-${id}`)
-        .click({ force: true })
+        .realHover()
         .should('have.css', 'color', 'rgb(0, 149, 144)')
         .and('have.css', 'border-color', 'rgb(0, 149, 144)')
     })

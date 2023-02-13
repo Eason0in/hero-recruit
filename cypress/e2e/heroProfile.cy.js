@@ -19,4 +19,10 @@ describe('Hero Profile 檢查 render', () => {
       cy.getByData('profile-aside').should('exist')
     })
   })
+
+  it('hover 在 dog 上右邊文字要出現', () => {
+    cy.getByData(`card-1`).click()
+    cy.getByData('dog-div').realHover()
+    cy.getByData('dog-p').should('have.css', 'display', 'block')
+  })
 })

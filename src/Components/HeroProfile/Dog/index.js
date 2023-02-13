@@ -4,7 +4,7 @@ const Dog = ({ maxPoint }) => {
   return (
     <DogDiv data-test="dog-div">
       <DogSpan />
-      <DogP>這位英雄的最大能力值為：{maxPoint}</DogP>
+      <DogP data-test="dog-p">這位英雄的最大能力值為：{maxPoint}</DogP>
     </DogDiv>
   )
 }
