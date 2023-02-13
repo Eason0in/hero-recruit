@@ -1,11 +1,18 @@
 # 如何執行完成的 package
 
 1. 下載專案 `git clone https://github.com/Eason0in/hero-recruit.git`
-2. 建議 node 版本要在 16.15.0 之後
-3. 建議安裝 yarn 版本要在 1.22.18 之後
-4. 執行 `yarn install` 安裝套件
-5. 建議安裝 npm 版本要在 8.11.0 之後
-6. 執行 `npm install` 安裝套件
+2. 建議 node 版本要 16+
+3. 如果沒有裝 yarn 在全域
+
+   (1) 可安裝完 node & npm 後執行 `npm install`
+
+   (2) 安裝完後執行 `npm start` 會自動開啟瀏覽器
+
+4. 如果全域有安裝 yarn 版本建議要 1.22.18
+
+   (1) 執行 `yarn install` 安裝套件
+
+   (2) 安裝完後執行 `yarn start` 會自動開啟瀏覽器
 
 # 專案的架構、Web 的架構邏輯
 
@@ -75,7 +82,7 @@
 
 # 在這份專案中你遇到的困難、問題，以及解決的方法
 
-## 1.
+### 1.
 
 - 問題：用前端 router 切換頁面，以及 HeroList 在切換頁面時不消失
 
@@ -83,7 +90,7 @@
 
 - 解決的方法：印象中看過教學影片 nested routes 的作法，遵循著 [官方文件](https://reactrouter.com/en/main/start/tutorial#nested-routes) 操作得到子 route 的處理方式
 
-## 2.
+### 2.
 
 - 問題：當專案啟動時以及使用者在瀏覽器 url 打 `/` Enter 時，想將 `/` 導到 `/heroes`
 
@@ -95,7 +102,7 @@
 
   - 翻[文件](https://reactrouter.com/en/main/fetch/redirect) 發現可以寫 redirect 在 loader 裡面
 
-## 3.
+### 3.
 
 - 問題：兩個方法打 Hero CardList 的 API
 
@@ -105,7 +112,7 @@
 
 - 解決的方法：考量到重複的 request 數量，最後選擇使用 useEffect 打 API
 
-## 4.
+### 4.
 
 - 問題：如何用 cypress 在複雜的專案裡寫 E2E 測試
 
